@@ -6,7 +6,7 @@
 
 <!-- START META -->
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
-<meta name="description" content="<?php if ( is_home() || is_category() || is_archive() ||  is_page() ) { ?><?php bloginfo('description'); ?><?php } ?><?php if (is_single()) { $key="meta"; echo get_post_meta($post->ID, $key, true); } ?>">
+<meta name="description" content="<?php if ( is_home() || is_category() || is_archive() || is_page() ) { ?><?php bloginfo('description'); ?><?php } ?><?php if ( is_single() ) { echo strip_tags(get_the_excerpt()); } ?>" />
 <meta name="viewport" content="width=device-width">
 <!-- END META --> 
 
@@ -16,7 +16,6 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/ico-poop.png" />
 <!-- END MY LINKS -->
-
 
 <!-- BEGIN WP HEAD -->
 <?php wp_head(); ?>
