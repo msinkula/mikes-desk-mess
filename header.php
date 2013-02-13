@@ -7,7 +7,7 @@
 <!-- START META -->
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 <meta name="description" content="<?php if ( is_home() || is_category() || is_archive() || is_page() ) { ?><?php bloginfo('description'); ?><?php } ?><?php if ( is_single() ) { echo strip_tags(get_the_excerpt()); } ?>" />
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 <!-- END META --> 
 
 <!-- BEGIN MY LINKS -->
@@ -65,26 +65,24 @@
     <nav class="select">
     <label>Pages: </label>
     <?php wp_dropdown_pages(array('selected' => 0, 'post_type' => 'page')); ?>
-   	<script type="text/javascript"><!--
+    <script type="text/javascript">
 		var pageDropdown = document.getElementById("page_id");
 		function onPageChange() {
 			if ( pageDropdown.options[pageDropdown.selectedIndex].value > 0 ) {
-				location.href = "<?php echo get_option('home');
-	?>/?page_id="+pageDropdown.options[pageDropdown.selectedIndex].value;
+				location.href = "<?php echo get_option('home'); ?>/?page_id="+pageDropdown.options[pageDropdown.selectedIndex].value;
 			}
 		}
 		pageDropdown.onchange = onPageChange;
---></script>
-	<label>Categories: </label>
-     <?php wp_dropdown_categories(); ?>
-     <script type="text/javascript"><!--
+    </script>
+    <label>Categories: </label>
+    <?php wp_dropdown_categories(); ?>
+    <script type="text/javascript">
 		var catDropdown = document.getElementById("cat");
 		function onCatChange() {
 			if ( catDropdown.options[catDropdown.selectedIndex].value > 0 ) {
-				location.href = "<?php echo get_option('home');
-	?>/?cat="+catDropdown.options[catDropdown.selectedIndex].value;
+				location.href = "<?php echo get_option('home'); ?>/?cat="+catDropdown.options[catDropdown.selectedIndex].value;
 			}
 		}
-		catDropdown.onchange = onCatChange;
---></script> 
+    	catDropdown.onchange = onCatChange;
+    </script> 
 	</nav>

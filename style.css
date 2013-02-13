@@ -55,47 +55,46 @@ h1, h2, h3, h4 {
 	font-weight: normal;
 	line-height: 100%;
 	}
+	
+audio {
+	padding-top: 10px;
+}
 
 
 /* HEADER */
 #header {
-	max-width: 1000px;
+	max-width: 1000px; /* change parent elements to a max-width */
 	margin: 0 auto;
 	overflow: hidden;
 	}
 
 	#logo {
 		float:left;
-		width: 48%;
-		/*border: 1px solid magenta;*/
+		width: 442px; /* leave child elements at fixed width */
 		}
 		
-	#logo img {
-		/*border: 1px solid yellow;*/
-	}
+		#logo img {
+	
+		}
 		
 	#tchotchkes {
 		float:right;
-		width: 50%;
-		/*border: 1px solid magenta;*/
+		width: 558px;
 		text-align: right;
 		}
 		
 	#tchotchkes-business {
-		/*border: 1px solid yellow;*/
 		position: relative;
 		margin-right: -40px;
 		z-index: 10;
-		width: 40.4%; /* 202px / 500px; */
+		width: 202px; 
 		}
 		
 	#tchotchkes-school {
-		/*border: 1px solid yellow;*/
 		position: relative;
 		z-index: 5;
-		width: 41.2%; /* 206px / 500px; */
+		width: 206px; 
 		}
-		
 		
 /* HEADER */
 
@@ -146,12 +145,12 @@ h1, h2, h3, h4 {
 	
 	
 #middle {
+	max-width: 940px;
 	margin: 0 auto;
 	margin-top: -7px; /* AAACK! */
-	max-width: 940px;
-	padding: 10px 30px; /* 30px / 1000px */
+	padding: 10px 30px;
 	background: url(/*images/bg-12col.png*/) center repeat-y, url(images/bg-middle.png) top center repeat-y;
-	background-size: 100%;
+	background-size: 100%; /* this allows the background image to scale relatively */
 	overflow: hidden;
 	}
 	
@@ -161,11 +160,11 @@ h1, h2, h3, h4 {
 	
 	/* SIDEBAR */
 	#sidebar {
-		width: 29.5744680851064%; /* 278px / 940px */
 		float: right;
+		width: 278px; /* you can still leave child elements at fixed width */
 		border: 1px solid #CAC5B9;
-		border-radius: 10px; /* 10px /300px */
-		background: url(images/bg-sidebar.png);
+		border-radius: 10px; 
+		background-color: #FBF9F6;
 		padding: 20px 10px;
 		margin-bottom: 20px;
 		}
@@ -176,7 +175,7 @@ h1, h2, h3, h4 {
 	
 	#sea-men img {
 		padding: 0 5px;
-		width: 32px;
+		width: 12%;
 		}
 
 	#sidebar li.widget, #sidebar div.tubepress_sidebar {
@@ -211,7 +210,6 @@ h1, h2, h3, h4 {
 		font-size: 28px;
 		font-family: "FeltTipRomanRegular",  "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 		color: #635537; /* brown */
-		/*margin-bottom: 10px;*/	
 		}
 	
 		.widget h2 a {
@@ -269,7 +267,7 @@ h1, h2, h3, h4 {
 		}
 		
 	#sidebar div.search input.subscribe, #sidebar div.search input.unsubscribe {
-		padding: 4px 8px; /* 8px / 145px */
+		padding: 4px 8px; 
 		font-size: .75em; 
 		font-weight: bold;
 		margin: 5px;
@@ -293,13 +291,13 @@ h1, h2, h3, h4 {
 	/* BEGIN CONTENT */
 	#content {
 		float:left;
-		width: 65.9574468085106%; /* 620px / 940px */
+		width: 620px; /* you can still leave child elements at fixed width */
 		margin-bottom: 20px;
 		overflow: hidden;
 		}
 			
 	#content h1 {
-		font-size: 36px;
+		font-size: 2.25em; /* 36px / 16px */
 		font-family: "FeltTipRomanRegular",  "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 		font-weight:normal;
 		margin-bottom: 4px;
@@ -321,7 +319,9 @@ h1, h2, h3, h4 {
 			
 	#content h2 {
 		font-weight:normal;
-		font-size: 32px;
+		font-size: 2em; /* 32px / 16px */
+		padding-top: 8px;
+		margin-bottom: 2px;
 		font-family: "FeltTipRomanRegular",  "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 		}
 		
@@ -812,15 +812,36 @@ h1, h2, h3, h4 {
 /* Desktop Screen Set to 1024 x 768 or Below & iPad Screen in Landscape Mode */
 @media screen and (max-width: 1024px) {
 
-	#menu {
-		max-width: 940px;
-		padding: 20px 3%; 
+
+	#logo {
+		width: 44.2%; /* 442px / 1000px */
+		}
+		
+		
+	#tchotchkes {
+		width: 55.8%; /* 558px / 1000px */
+		}
+		
+		#tchotchkes-business {
+			position: relative;
+			margin-right: -40px;
+			z-index: 10;
+			width: 36.2007168458781%; /* 202px / 558px; */
+			}
+			
+		#tchotchkes-school {
+			position: relative;
+			z-index: 5;
+			width: 36.9175627240143%; /* 206px / 558px; */
+			}	
+	
+		#content {
+			width: 65.9574468085106%; /* 620px / 940px */
 		}
 	
-	#middle {
-		max-width: 940px;
-		padding: 10px 3%; /* 30px / 1000px */
-	}	
+		#sidebar {
+			width: 29.5744680851064%; /* 278px / 940px */
+		}
 	
 }
 	
@@ -839,19 +860,6 @@ h1, h2, h3, h4 {
 /* Amazon Kindle or B&N Nook Held in Portrait Mode */
 @media screen and (max-width: 600px) {
 	
-	#menu li {
-		font-size: 1.125em; /* 18px / 16px */		
-		}	
-				
-}
-
-/* iPhones Held in Landscape Mode */
-@media screen and (max-width: 480px) {
-			
-	body {
-		background:#aa8254 url(images/bg-body-480.png) repeat-y top center;
-		}
-			
 	#logo {
 		margin: 0 auto;
 		float: none;
@@ -906,8 +914,18 @@ h1, h2, h3, h4 {
 	#footer span.alignright {
 		float: none;
 		display: block;
-	}
-		
+	}	
+				
+}
+
+/* iPhones Held in Landscape Mode */
+@media screen and (max-width: 480px) {
+			
+	body {
+		background:#aa8254 url(images/bg-body-480.png) repeat-y top center;
+		}
+			
+	
 }
 
 /* iPhones Held in Portrait Mode */
