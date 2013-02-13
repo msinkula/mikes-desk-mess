@@ -812,7 +812,6 @@ audio {
 /* Desktop Screen Set to 1024 x 768 or Below & iPad Screen in Landscape Mode */
 @media screen and (max-width: 1024px) {
 
-
 	#logo {
 		width: 44.2%; /* 442px / 1000px */
 		}
@@ -845,19 +844,7 @@ audio {
 	
 }
 	
-/* Desktop Screen Set to 800 x 600 or Below for the Vision Impared */
-@media screen and (max-width: 800px) {
-		
-}
-
-/* iPad Screen Held in Portrait Mode */
-@media screen and (max-width: 768px) {
-
-	
-		
-}
-
-/* Amazon Kindle or B&N Nook Held in Portrait Mode */
+/* Mobile Screen Set to 600px or Below  */
 @media screen and (max-width: 600px) {
 	
 	#logo {
@@ -896,7 +883,7 @@ audio {
 			
 	#sidebar, #content { 
 		float: none;
-		width: auto;
+		width: auto; /* reset the width to follow it's parent element */
 	}
 	
 	#sidebar li.widget, #sidebar div.tubepress_sidebar, #sidebar li.widget h2, #sidebar li.widget ul li {
@@ -918,17 +905,20 @@ audio {
 				
 }
 
-/* iPhones Held in Landscape Mode */
+/* Mobile Screen Set to 480px or Below  */
 @media screen and (max-width: 480px) {
 			
 	body {
 		background:#aa8254 url(images/bg-body-480.png) repeat-y top center;
 		}
-			
+		
+	#middle {	
+		padding: 10px 15px;
+	}
 	
 }
 
-/* iPhones Held in Portrait Mode */
+/* Mobile Screen Set to 320px or Below  */
 @media screen and (max-width: 320px) {
 
 	#middle nav.select select {
