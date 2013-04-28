@@ -1,19 +1,19 @@
 /*  
 Theme Name: Mike's Desk Mess
 Description: This is a theme your mom and her sister would love.
-Version: 2
+Version: 69
 Author: Premium Design Works
 Author URI: http://www.premiumdw.com/
 */
 
-/* COLOR PALETTE:
-	Brown: #635537 - http://slayeroffice.com/tools/color_palette/?hex=635537
-	Cream: #EEE8DA - http://slayeroffice.com/tools/color_palette/?hex=EEE8DA
-	Red: #D21600 - http://slayeroffice.com/tools/color_palette/?hex=D21600
-	Yellow: #EBE3B8 - http://slayeroffice.com/tools/color_palette/?hex=EBE3B8
-	*/
+/* 	
+COLOR PALETTE:
+Brown: #635537 - http://slayeroffice.com/tools/color_palette/?hex=635537
+Cream: #EEE8DA - http://slayeroffice.com/tools/color_palette/?hex=EEE8DA
+Red: #D21600 - http://slayeroffice.com/tools/color_palette/?hex=D21600
+Yellow: #EBE3B8 - http://slayeroffice.com/tools/color_palette/?hex=EBE3B8
+*/
 
-/* CSS RESET */
 * { margin: 0; padding: 0; border: 0; }
 
 @font-face {
@@ -28,8 +28,9 @@ Author URI: http://www.premiumdw.com/
 
 }
 
-
 /* Desktop Screen Set to above 1024 x 768 */
+html { -webkit-text-size-adjust: none; }
+
 body {
 	background:#aa8254 url(images/bg-body.png) repeat-y top center;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
@@ -58,7 +59,7 @@ h1, h2, h3, h4 {
 	
 audio {
 	padding-top: 10px;
-}
+	}
 
 
 /* HEADER */
@@ -71,10 +72,6 @@ audio {
 	#logo {
 		float:left;
 		width: 442px; /* leave child elements at fixed width */
-		}
-		
-		#logo img {
-	
 		}
 		
 	#tchotchkes {
@@ -95,8 +92,6 @@ audio {
 		z-index: 5;
 		width: 206px; 
 		}
-		
-/* HEADER */
 
 /* MENU */
 #menu {
@@ -138,8 +133,8 @@ audio {
 #topper {
 	max-width: 1000px;
 	margin: 0 auto;
-	background: url(images/bg-topper.png) no-repeat top center;
-	background-size: 100%;
+	/*background: url(images/bg-topper.png) no-repeat top center;
+	background-size: 100%;*/
 	overflow: hidden;
 	}
 	
@@ -238,7 +233,6 @@ audio {
 		
 		.widget ul li a, .widget dl dd a {
 			color: #d21600;
-			/*text-decoration:none;*/
 			}
 
 	.textwidget{
@@ -286,9 +280,8 @@ audio {
 			background: -moz-linear-gradient(top, #FBF9F6, #CAC5B9); /* FIREFOX */
 			border: 1px solid #CAC5B9;
 			}		
-	/* END SIDEBAR */
 	
-	/* BEGIN CONTENT */
+	/* CONTENT */
 	#content {
 		float:left;
 		width: 620px; /* you can still leave child elements at fixed width */
@@ -375,12 +368,13 @@ audio {
 		font-size:14px;
 		}
 	
-	#content p.postdata, #content p.jgallery-previous, #content p.jgallery-next{
+	#content p.postdata {
 		margin-bottom: 10px;
 		font-size: 12px;
 		font-weight: normal;
 		font-style:italic;
 		color: #4a4131;
+		line-height: 125%;
 		}
 		
 	#content p.wp-caption-text {
@@ -388,14 +382,6 @@ audio {
 		font-style: italic;
 		text-align: left;
 		margin-bottom: 0;
-		}
-	
-	#content div.jgallery-captions p {
-		font-size: 12px;
-		font-weight: normal;
-		font-style:italic;
-		/*color: #4a4131;*/
-		color: #635537; /* brown */
 		}
 		
 	#content iframe, #content object {
@@ -421,10 +407,6 @@ audio {
 			border: 1px solid #d21600;
 			background-color: #d21600;
 			}
-
-		#content div.jgallery-images img {
-			border: none;
-			}		
 		
 	img.aligncenter {
 		margin-left: auto;
@@ -452,6 +434,11 @@ audio {
 		float: left;
 		}
 		
+	.clear {
+		clear: both;
+		height: 0px;
+		}
+		
 	.bordernone {
 		border: none;
 		}
@@ -468,11 +455,6 @@ audio {
 	#content div.wp-caption img {
 		width: 100%;
 		height: auto;
-		}
-		
-	.clear {
-		clear: both;
-		height: 0px;
 		}
 			
 	article.post {
@@ -528,44 +510,6 @@ audio {
 	#facebook-like-button {
 		margin-top: 25px;
 		}
-		
-	div.wp-pagenavi {
-		float: right;
-		margin: 20px 0;
-		border-bottom: none;
-		font-size: 12px;
-		}
-
-	.wp-pagenavi a, .wp-pagenavi a:link {
-		padding: 0px 4px; 
-		margin: 2px;
-		text-decoration: none;
-		border: none;
-		color: #d21600; /* red */
-		}
-	.wp-pagenavi a:hover {	
-		text-decoration: underline;
-		color: #d21600; /* red */
-		}
-		
-	.wp-pagenavi span.pages {
-		padding: 0px 4px; 
-		margin: 2px 10px 2px 2px;
-		border-bottom: none;
-		display:none;
-		}
-	.wp-pagenavi span.current {
-		padding: 0px 4px; 
-		margin: 2px;
-		font-weight: bold;
-		border-bottom: none;
-		color: #635537; /* brown */
-		}
-	.wp-pagenavi span.extend {
-		padding: 0px 4px; 
-		margin: 2px;	
-		border: none;
-		}	
 	
 	.post-comments {
 		float: right;
@@ -580,19 +524,6 @@ audio {
 		display: none;
 		}
 		
-	.post-social {
-		float: right;
-		width: 78px;
-		height: 74px;
-		margin:-22px 30px 0 0;
-		background: url(images/socialbck.png) no-repeat;
-		}
-		
-	.rss {	
-		background: url(images/rssicon.png) no-repeat 0 50%;
-		padding-left:20px;
-		padding-top:1px;
-		}
 	
 	.post-comments a:link, .post-comments a:visited, .post-comments a:active{
 		color: #635537; /* brown */
@@ -635,14 +566,11 @@ audio {
 		
 	.alt {
 		padding: 10px;
-		/*background: #f2f2f2;*/
-		/*border: 1px solid #635537;*/ /* brown */
+
 		}	
 		
 	.alt2{
 		padding: 10px;
-		/*background: #ffffff;*/
-		/*border: 1px solid #635537;*/ /* brown */
 		}	
 		
 	.administrator {
@@ -779,11 +707,8 @@ audio {
 	span.wpcf7-list-item {
 		display: block;
 		}
-	/* END CONTENT */
 	
-/* END MIDDLE */
-	
-/* BEGIN FOOTER */
+/* FOOTER */
 #footer {
 	max-width: 1000px;
 	margin: 0 auto;
@@ -807,7 +732,6 @@ audio {
 		border-bottom: none;
 		text-decoration: none;
 		}
-/* END FOOTER */
 
 /* Desktop Screen Set to 1024 x 768 or Below */
 @media screen and (max-width: 1024px) {
@@ -832,7 +756,11 @@ audio {
 			position: relative;
 			z-index: 5;
 			width: 36.9175627240143%; /* 206px / 558px; */
-			}	
+			}
+			
+		#middle {
+			padding: 10px 3%; /* 30px / 1000px */
+		}
 	
 		#content {
 			width: 65.9574468085106%; /* 620px / 940px */
@@ -840,6 +768,7 @@ audio {
 	
 		#sidebar {
 			width: 29.5744680851064%; /* 278px / 940px */
+			padding: 20px 01.063829787234%; /* 10px / 940px */
 		}
 	
 }
@@ -863,8 +792,8 @@ audio {
 		
 	#middle nav.select {
 		display: block;
-		text-align: center;
 		margin-bottom: 20px;
+		overflow: hidden;
 	}
 	
 	#middle nav.select label {
@@ -873,12 +802,21 @@ audio {
 	}
 	
 	#middle nav.select select {
-		width: 25%;
+		/*width: 100%;*/
 		font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-		/*font-size: 1em;*/
+		font-size: .875em;
 		padding: 2px;
 		border: 2px solid #CAC5B9;
-		margin-right: 10px;
+	}
+	
+	#page_id {
+		float: left;
+		width: 48%;
+	}
+	
+	#cat {
+		float: right;
+		width: 48%;
 	}
 			
 	#sidebar, #content { 
@@ -916,13 +854,13 @@ audio {
 		padding: 10px 15px;
 	}
 	
+	#content article.post-box img {
+		margin-right: 10px;
+	}
+	
 }
 
 /* Mobile Screen Set to 320px or Below  */
 @media screen and (max-width: 320px) {
-
-	#middle nav.select select {
-		width: 22%;
-	}
 		
 }	

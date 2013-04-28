@@ -7,7 +7,8 @@
 <!-- START META -->
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 <meta name="description" content="<?php if ( is_home() || is_category() || is_archive() || is_page() ) { ?><?php bloginfo('description'); ?><?php } ?><?php if ( is_single() ) { echo strip_tags(get_the_excerpt()); } ?>" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />-->
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
 <!-- END META --> 
 
 <!-- BEGIN MY LINKS -->
@@ -63,9 +64,9 @@
 <!-- BEGIN MIDDLE -->
 <div id="middle">
     <nav class="select">
-    <label>Pages: </label>
-    <?php wp_dropdown_pages(array('selected' => 0, 'post_type' => 'page')); ?>
+    <?php $pageslabel = array('show_option_none' => 'Pages:'); wp_dropdown_pages( $pageslabel); /* creates the dropdown list of pages in WordPress with a label of 'Pages:' */ ?>
     <script type="text/javascript">
+		// creates the link to the page's id
 		var pageDropdown = document.getElementById("page_id");
 		function onPageChange() {
 			if ( pageDropdown.options[pageDropdown.selectedIndex].value > 0 ) {
@@ -74,9 +75,9 @@
 		}
 		pageDropdown.onchange = onPageChange;
     </script>
-    <label>Categories: </label>
-    <?php wp_dropdown_categories(); ?>
+    <?php $categorieslabel = array('show_option_none' => 'Categories:'); wp_dropdown_categories($categorieslabel); /* creates the dropdown list of categories in WordPress with a label of 'Categories:' */ ?> 
     <script type="text/javascript">
+		// creates the link to the category's id
 		var catDropdown = document.getElementById("cat");
 		function onCatChange() {
 			if ( catDropdown.options[catDropdown.selectedIndex].value > 0 ) {
