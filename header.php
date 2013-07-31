@@ -7,7 +7,6 @@
 <!-- START META -->
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 <meta name="description" content="<?php if ( is_home() || is_category() || is_archive() || is_page() ) { ?><?php bloginfo('description'); ?><?php } ?><?php if ( is_single() ) { echo strip_tags(get_the_excerpt()); } ?>" />
-<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />-->
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
 <!-- END META --> 
 
@@ -16,7 +15,14 @@
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/ico-poop.png" />
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flexslider.css" type="text/css" media="all" />
 <!-- END MY LINKS -->
+
+<!-- BEGIN MY SCRIPTS -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/jquery.flexslider.js"></script>
+<!-- BEGIN MY SCRIPTS -->
+
 
 <!-- BEGIN WP HEAD -->
 <?php wp_head(); ?>

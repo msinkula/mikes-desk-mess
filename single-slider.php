@@ -8,25 +8,10 @@
     <h1><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
     <p class="postdata">Posted <?php the_time('M j, Y') ?> in <?php the_category(', ') ?></p>
     
-    <?php if(is_single('1420')): ?> 
-    <!-- Begin Slider --> 
-    <div class="flexslider">
-        <ul class="slides">
-        <?php
-            $attachments = get_children( array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image','caption' => $attachment->post_excerpt,) );
-            foreach ( $attachments as $attachment_id => $attachment ) {
-                echo '<li>';
-                echo wp_get_attachment_image($attachment_id, 'large');
-				echo '<p>';
-				echo get_post_field('post_excerpt', $attachment->ID);
-				echo '</p>';
-				echo '</li>';
-				
-            } ?>
-        </ul>
-    </div>
-    <!-- End Slider -->
-    <?php endif; ?>
+    <!-- Begin Test Slider -->
+    <?php wp_get_attachment_image_src( $attachment_id, $size, $icon ); ?> 
+    
+    <!-- End Test Slider -->
     <?php the_content(''); ?> 
     <nav class="post-navigation">
         <span class="post-navigation-previous"><?php previous_post(' &laquo; %','', 'yes'); ?></span>
