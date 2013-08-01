@@ -23,22 +23,15 @@ pageTracker._trackPageview();
 
 <!-- Begin Flex Slider -->
 <script type="text/javascript">
-    $(function(){
-      SyntaxHighlighter.all();
-    });
+    
     $(window).load(function(){
       $('.flexslider').flexslider({
-        animation: "slide",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
+        animation: "fade",
+		slideshow: false,
       });
     });
 </script>
 <!-- End Flex Slider -->
-
-
-
 
 <!--[if lt IE 9]>
 <script language="JavaScript" type="text/javascript">

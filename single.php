@@ -9,11 +9,11 @@
     <p class="postdata">Posted <?php the_time('M j, Y') ?> in <?php the_category(', ') ?></p>
     <?php if(is_single('1420') || is_single('1431')): // display for test postings only ?> 
     
-    <?php // if there is more than one attachment image, display as a flexslider gallery
+    <?php // display as a flexslider gallery
 	
 	$attachments = get_children( array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image','caption' => $attachment->post_excerpt,) );
 	
-	if (count($attachments) > 1) { // count to see if there is more than one image ?>
+	if (count($attachments) > 0) { // count to see if there are images ?>
         
         <!-- Begin Slider --> 
         <div class="flexslider">
@@ -21,8 +21,8 @@
             
             <?php // create the list items for images with captions
             
-			foreach ( $attachments as $attachment_id => $attachment ) {
-				
+			foreach ( $attachments as $attachment_id => $attachment ) { 
+			
 				echo '<li>';
 				echo wp_get_attachment_image($attachment_id, 'large');
 				echo '<p>';
@@ -30,33 +30,14 @@
 				echo '</p>';
 				echo '</li>';
 				
-            } // end create list ?>
+            } ?>
             
             </ul>
         </div>
         <!-- End Slider -->
         
-         
-	<?php } // end more than one image
-	
-	elseif (count($attachments) == 1) { // if there is only one image ?>
-	
-    	<!-- Begin One Image -->
-    	<div class="wp-caption alignnone">
-        
-        <?php foreach ($attachments as $attachment_id => $attachment) {
-			
-         	echo wp_get_attachment_image($attachment_id, 'large'); 
-        	echo '<p>';
-			echo get_post_field('post_excerpt', $attachment->ID);
-			echo '</p>';
-		
-		} ?>
-        </div>
-        <!-- End One Image -->
-		
-	<?php } // end only one image ?>
-        
+	<?php } // end count for images ?>  
+           
     <?php endif; /* end if is test postings */ ?>
     <?php the_content(''); ?> 
     <nav class="post-navigation">
