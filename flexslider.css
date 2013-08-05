@@ -46,6 +46,8 @@ html[xmlns] .slides {display: block;}
 	text-align: center;
 	background-color: #FFF;
 	padding: 10px;
+	height: auto; 
+	overflow: hidden;
 	zoom: 1;
 	}
 .flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
@@ -53,8 +55,8 @@ html[xmlns] .slides {display: block;}
 .flexslider .slides {zoom: 1;}
 
 .carousel li {margin-right: 5px}
-.flexslider img { width: 100%; height: auto; }
-.flexslider li {margin-left: 0;}
+.flexslider img { width: 100%; height: auto;}
+.flexslider li { margin-left: 0;}
 #content div.flexslider p { margin-bottom: -2px; padding: 5px 5px 0 5px; font-size: .875em; font-style: italic; }
 #content div.flexslider ul { margin-bottom: 0; margin-left: 0; }
 

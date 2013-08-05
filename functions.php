@@ -48,5 +48,6 @@ if ( function_exists( 'add_theme_support' ) ) {
 	set_post_thumbnail_size( 130, 130, true ); // default Post Thumbnail dimensions (cropped)
 	}
 	
+	
 ?>
 
