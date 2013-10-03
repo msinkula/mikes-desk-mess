@@ -23,6 +23,18 @@
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/jquery.flexslider.js"></script>
 <!-- BEGIN MY SCRIPTS -->
 
+<!-- Begin Flex Slider -->
+<script type="text/javascript">
+    
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "fade",
+		slideshow: false,
+      });
+    });
+	
+</script>
+<!-- End Flex Slider -->
 
 <!-- BEGIN WP HEAD -->
 <?php wp_head(); ?>
@@ -50,6 +62,12 @@
     
 </div>
 <!-- END HEADER -->
+
+<!-- BEGIN PRINT HEADER -->
+<div id="print-header">
+    <h1>MikeSinkula.com</h1>
+</div>
+<!-- END PRINT HEADER -->
 
 <!-- BEGIN MENU -->
 <div id="menu">

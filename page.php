@@ -6,11 +6,12 @@
 <?php while (have_posts()) : the_post(); ?>
     <article class="page" id="page-<?php the_ID(); ?>">
     <h1><?php the_title(); ?></h1>
+    <?php add_flexslider(); ?>
     <?php the_content(); ?>
     </article>
 <?php endwhile; ?>
 <?php endif; ?>
 </div>
-<!-- BEGIN CONTENT -->
+<!-- END CONTENT -->
 
 <?php get_footer();?>

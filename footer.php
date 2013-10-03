@@ -21,21 +21,9 @@ pageTracker._trackPageview();
 } catch(err) {}</script>
 <!-- END ANALYTICS -->
 
-<!-- Begin Flex Slider -->
-<script type="text/javascript">
-    
-    $(window).load(function(){
-      $('.flexslider').flexslider({
-        animation: "fade",
-		slideshow: false,
-      });
-    });
-</script>
-<!-- End Flex Slider -->
-
 <!--[if lt IE 9]>
 <script language="JavaScript" type="text/javascript">
-alert("It appears that you are using an outdated version of Internet Explorer that does not support HTML5 or CSS3. So, things may not look right to you.")
+alert("It appears that you are using an outdated version of Internet Explorer that does not support HTML5 or CSS3.")
 </script><![endif]-->
 
 <!-- BEGIN WP FOOTER -->
