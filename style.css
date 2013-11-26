@@ -283,7 +283,8 @@ audio {
 			background: -webkit-gradient(linear, left top, left bottom, from(#FBF9F6), to(#CAC5B9)); /* CHROME/SAFARI */
 			background: -moz-linear-gradient(top, #FBF9F6, #CAC5B9); /* FIREFOX */
 			border: 1px solid #CAC5B9;
-			}		
+			}	
+							
 	
 	/* CONTENT */
 	#content {
@@ -401,7 +402,7 @@ audio {
 		border: 1px solid #635537;
 		padding: 1.5%;
 		overflow: hidden;
-		width: 96%;
+		width: 95%;
 		}
 		
 	#content img.avatar {
@@ -455,6 +456,8 @@ audio {
 		border: none;
 		}
 		
+	
+	
 	#content div.wp-caption {
 	   border: 1px solid #635537; /* brown */
 	   text-align: center;
