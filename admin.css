@@ -1,0 +1,7 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body#tinymce.wp-editor { 
+	font-size: 100%; /* 16px */
+	line-height: 150%; /* 24px */
+	}

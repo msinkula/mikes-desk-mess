@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<!-- BEGIN CONTENT -->
+<!-- Begin Content -->
 <div id="content">
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
@@ -18,6 +18,6 @@
     <span class="post-navigation-next"><?php next_posts_link('Older Postings &raquo;'); ?></span>
 </nav>
 </div>
-<!-- END CONTENT -->
+<!-- End Content -->
 
 <?php get_footer();?>

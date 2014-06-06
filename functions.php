@@ -78,6 +78,8 @@ function add_flexslider() { // display attachment images as a flexslider gallery
 	<?php } // end see if images
 	
 } // end add flexslider
+
+add_editor_style( 'admin.css' );
 	
 	
 ?>

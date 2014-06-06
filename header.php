@@ -69,6 +69,8 @@
 	
     <!-- BEGIN TCHOTCHKES -->
     <div id="tchotchkes">
+    <a href="http://www.masters.mikesinkula.com/" target="_blank" title="Link to Mike's Masters Blog"><img id="tchotchkes-masters" src="<?php bloginfo('template_directory'); ?>/images/img-tchotchkes-masters.png" alt="Mike's Masters Blog" /></a>
+    
     <a href="http://www.premiumdw.com/" target="_blank" title="Link to Mike's Business Website"><img id="tchotchkes-business" src="<?php bloginfo('template_directory'); ?>/images/img-tchotchkes-business.png" alt="Mike's Business Website" /></a>
     <a href="http://www.sccc.premiumdw.com/" target="_blank" title="Link to Mike's Student Website"><img id="tchotchkes-school" src="<?php bloginfo('template_directory'); ?>/images/img-tchotchkes-students.png" alt="Mike's Student Website" /></a>
   </div>

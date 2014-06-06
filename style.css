@@ -32,12 +32,14 @@ Yellow: #EBE3B8 - http://slayeroffice.com/tools/color_palette/?hex=EBE3B8
 html { -webkit-text-size-adjust: none; }
 
 body {
-	background:#aa8254 url(images/bg-body.png) repeat-y top center;
+	background:#aa8254 url(images/bg-1920.png) repeat-y top center;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 	font-size: 100%; /* 16px */
 	line-height: 150%; /* 24px */
 	color: #635537; /* brown */
 	}
+	
+
 	
 img, embed, object, video, iframe {
 	max-width: 100%;
@@ -75,21 +77,33 @@ audio {
 		}
 		
 	#tchotchkes {
+		position: relative;
 		float:right;
 		width: 558px;
 		text-align: right;
 		}
 		
+	#tchotchkes-masters {
+		position: absolute;
+		top: 0;
+		right: 150px;
+		z-index: 20;
+		width: 162px; 
+		}
+		
 	#tchotchkes-business {
-		position: relative;
-		margin-right: -40px;
-		z-index: 10;
+		position: absolute;
+		top: 40px;
+		right: 170px;
+		z-index: 15;
 		width: 202px; 
 		}
 		
 	#tchotchkes-school {
-		position: relative;
-		z-index: 5;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 10;
 		width: 206px; 
 		}
 		
@@ -748,8 +762,12 @@ audio {
 		text-decoration: none;
 		}
 
-/* Desktop Screen Set to 1024 x 768 or Below */
+/* Tablet Screen Set to 1024 or Below */
 @media screen and (max-width: 1024px) {
+	
+	body {
+		background:#aa8254 url(images/bg-1024.png) repeat-y top center;
+	}
 
 	#logo {
 		width: 44.2%; /* 442px / 1000px */
@@ -760,16 +778,18 @@ audio {
 		width: 55.8%; /* 558px / 1000px */
 		}
 		
+		#tchotchkes-masters {
+			width: 29.0322580645161%; 
+			right: 26.8817204301075%;
+		}
+		
 		#tchotchkes-business {
-			position: relative;
-			margin-right: -40px;
-			z-index: 10;
 			width: 36.2007168458781%; /* 202px / 558px; */
+			top: 40px;
+			right: 30.465949820789%;
 			}
 			
 		#tchotchkes-school {
-			position: relative;
-			z-index: 5;
 			width: 36.9175627240143%; /* 206px / 558px; */
 			}
 			
@@ -789,8 +809,12 @@ audio {
 }
 	
 	
-/* Mobile Screen Set to 768px or Below  */
+/* Tablet Screen Set to 768px or Below  */
 @media screen and (max-width: 768px) {
+	
+	body {
+		background:#aa8254 url(images/bg-768.png) repeat-y top center;
+	}
 	
 	#menu li {
 		font-size: 1.25em;
@@ -805,6 +829,10 @@ audio {
 /* Mobile Screen Set to 600px or Below  */
 @media screen and (max-width: 600px) {
 	
+	body {
+		background:#aa8254 url(images/bg-body-600.png) repeat-y top center;
+		}
+	
 	#logo {
 		margin: 0 auto;
 		float: none;
@@ -818,6 +846,10 @@ audio {
 	#menu {
 		display: none;
 		}
+		
+	#middle {	
+		padding: 10px 3.33%;
+	}
 		
 	#middle nav.select {
 		display: block;
@@ -887,11 +919,6 @@ audio {
 		margin-right: 10px;
 	}
 	
-}
-
-/* Mobile Screen Set to 320px or Below  */
-@media screen and (max-width: 320px) {
-		
 }	
 
 /* Print Styles */
