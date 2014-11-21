@@ -1,5 +1,16 @@
 <?php
+/*  
+Theme Name: Mike's Desk Mess
+Description: This is a theme your mom and her sister would love.
+Version: 69
+Author: Premium Design Works
+Author URI: http://www.premiumdw.com/
+*/
 
+// Link to admin styles
+add_editor_style( 'admin.css' );
+
+// Register Sidebars
 if ( function_exists('register_sidebar') )
 	register_sidebars(array(
 	'name' => 'sidebar',
@@ -10,15 +21,10 @@ if ( function_exists('register_sidebar') )
 	'after_title' => '</h2>',
 	));
 	
-	register_sidebar(array(
-	'name' => 'menubar',
-	'description' => 'Widgets in this area will be shown in the menu bar.',
-	'before_widget' => '<div class="menu-widget">',
-	'after_widget' => '</div>',
-	'before_title' => '<h2 class="menu-widget-head">',
-	'after_title' => '</h2>'
-	));
-	
+// Enable Featured Image
+add_theme_support( 'post-thumbnails' ); 
+
+// Show Gravitars	
 function show_avatar($comment, $size) {				
 	 $email=strtolower(trim($comment->comment_author_email));
 	 $rating = "G"; // [G | PG | R | X]
@@ -33,53 +39,40 @@ function show_avatar($comment, $size) {
       echo "<img src='$grav_url'/>";
    	}		
 }
-	
-function new_excerpt_more($more) {
-       global $post;
-	return '<a href="'. get_permalink($post->ID) . '">Read the Rest...</a>';
-}
 
+// My First Function!
 function add_poop() {
 	return '<p>Poop.</p>';
 }
 
-if ( function_exists( 'add_theme_support' ) ) { 
-	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 130, 130, true ); // default Post Thumbnail dimensions (cropped)
-	}
 	
-function add_flexslider() { // display attachment images as a flexslider gallery
+function add_flexslider() { // display attachment images as a flexslider gallery on single posting
 	
-	$attachments = get_children(array('post_parent' => get_the_ID(), 'order' => 'ASC',/*'orderby' => 'menu_order',*/ 'post_type' => 'attachment', 'post_mime_type' => 'image','caption' => $attachment->post_excerpt, ));
+	$attachments = get_children(array('post_parent' => get_the_ID(), 'order' => 'ASC', 'orderby' => 'menu_order', 'post_type' => 'attachment', 'post_mime_type' => 'image','caption' => $attachment->post_excerpt, ));
 	
-	if ($attachments) { // see if there are images attached to posting ?>
+	if ($attachments) { // see if there are images attached to posting
         
-    <!-- Begin Slider --> 
-    <div class="flexslider">
-    <ul class="slides">
+		echo '<div class="flexslider">';
+		echo '<ul class="slides">';
     
-    <?php // create the list items for images with captions
+		foreach ( $attachments as $attachment_id => $attachment ) { // create the list items for images with captions
+		
+			echo '<li>';
+			echo wp_get_attachment_image($attachment_id, 'large');
+			echo '<p>';
+			echo get_post_field('post_excerpt', $attachment->ID);
+			echo '</p>';
+			echo '</li>';
+			
+		}
     
-    foreach ( $attachments as $attachment_id => $attachment ) { 
-    
-        echo '<li>';
-        echo wp_get_attachment_image($attachment_id, 'large');
-        echo '<p>';
-        echo get_post_field('post_excerpt', $attachment->ID);
-        echo '</p>';
-        echo '</li>';
+		echo '</ul>';
+		echo '</div>';
         
-    } ?>
-    
-    </ul>
-    </div>
-    <!-- End Slider -->
-        
-	<?php } // end see if images
+	} // end see if images
 	
 } // end add flexslider
 
-add_editor_style( 'admin.css' );
 	
 	
 ?>

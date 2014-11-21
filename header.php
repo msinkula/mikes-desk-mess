@@ -5,7 +5,6 @@
 <title><?php if ( is_home() || is_page() || is_archive()  ) { ?> <?php bloginfo('description'); echo ' | '; ?><?php } ?><?php if ( is_single() ) { ?> <?php wp_title('|',true,'right'); ?><?php } ?><?php bloginfo('name'); ?></title>
 
 <!-- START META -->
-<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 <meta name="description" content="<?php if ( is_home() || is_category() || is_archive() || is_page() ) { ?><?php bloginfo('description'); ?><?php } ?><?php if ( is_single() ) { echo strip_tags(get_the_excerpt($post->ID)); } ?>" />
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
 <!-- END META --> 
@@ -56,7 +55,7 @@
 
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 
 <!-- BEGIN HEADER -->
 <div id="header">
@@ -92,7 +91,6 @@
     <li class="<?php if ( is_home() || is_single() || is_archive()) { print 'current_page_item'; } ?>"><a href="<?php echo get_option('home'); ?>" title="Mike Sinkula's Blog">Blog</a></li>
     <?php wp_list_pages('post_title&depth=1&title_li='); ?>
     </ul>
-    
     </nav>
 </div>
 <!-- END MENU --> 

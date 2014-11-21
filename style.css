@@ -47,11 +47,11 @@ img, embed, object, video, iframe {
 	
 a:link, a:visited, a:active {
 	color: #d21600; /* red */
-	text-decoration: none;
+	text-decoration: underline;
 	}
 	
 a:hover {
-	text-decoration: underline;
+	text-decoration: none;
 	}
 	
 h1, h2, h3, h4 {
