@@ -39,8 +39,6 @@ body {
 	color: #635537; /* brown */
 	}
 	
-
-	
 img, embed, object, video, iframe {
 	max-width: 100%;
 	}
@@ -375,9 +373,11 @@ audio {
 		margin-bottom:10px;
 		}
 	
-	#content ul {
-		margin-left: 35px;
+	#content ul, #content ol {
+		/*margin-left: 35px;*/
+		list-style-position: inside;
 		margin-bottom:10px;
+		padding: 0 10px;
 		}
 	
 	#content blockquote	{
@@ -418,6 +418,10 @@ audio {
 		overflow: hidden;
 		width: 95%;
 		}
+		
+	#content img {
+		/*box-sizing: border-box;*/
+	}
 		
 	#content img.avatar {
 		border: 1px solid #635537;
@@ -469,9 +473,7 @@ audio {
 	.bordernone {
 		border: none;
 		}
-		
-	
-	
+			
 	#content div.wp-caption {
 	   border: 1px solid #635537; /* brown */
 	   text-align: center;
@@ -927,6 +929,11 @@ audio {
 	body {
 		background: none !important;
 		color: #000;
+		}
+		
+	a {
+		text-decoration: none !important;
+		border-bottom: none !important;
 		}
 		
 	#header, #sidebar, #footer, #comments-box, #dedication, #menu, #topper {

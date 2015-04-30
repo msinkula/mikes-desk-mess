@@ -45,8 +45,8 @@ function add_poop() {
 	return '<p>Poop.</p>';
 }
 
-	
-function add_flexslider() { // display attachment images as a flexslider gallery on single posting
+// Get My Flexslider
+function add_flexslider() { 
 	
 	$attachments = get_children(array('post_parent' => get_the_ID(), 'order' => 'ASC', 'orderby' => 'menu_order', 'post_type' => 'attachment', 'post_mime_type' => 'image','caption' => $attachment->post_excerpt, ));
 	
@@ -71,9 +71,36 @@ function add_flexslider() { // display attachment images as a flexslider gallery
         
 	} // end see if images
 	
-} // end add flexslider
+} 
+//
 
+// Get My Title Tag
+function get_my_title_tag() {
 	
+	if ( is_home() || is_archive() || is_front_page()) { 
+	
+		bloginfo('description'); // retrieve the site tagline
+	
+	} 
+	
+	elseif ( is_single() || is_page()) { 
+	
+		the_title(); // retrieve the page or posting title
+	
+		if ( is_page() && $post->post_parent ) { 
+	
+			echo ' | '; // separator with spaces
+			echo get_the_title($post->post_parent);  // retrieve the parent page title
+		
+		} 
+	
+	} 
+
+echo ' | '; // separator with spaces
+bloginfo('name'); // retrieve the site name
+	
+}
+//
 	
 ?>
 
