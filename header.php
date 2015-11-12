@@ -5,13 +5,13 @@
 <title><?php get_my_title_tag(); ?></title>
 
 <!-- START META -->
-<meta name="description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
+<meta name="description" content="<?php get_my_meta_description(); ?>" />
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
 <!-- END META --> 
 
 <!-- Begin Open Graph Meta for Facebook -->
 <meta property="og:title" content="<?php the_title(); ?>"/>
-<meta property="og:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
+<meta property="og:description" content="<?php echo get_my_meta_description(); ?>" />
 <meta property="og:url" content="<?php the_permalink(); ?>"/>
 <?php $fb_image = wp_get_attachment_image_src(get_post_thumbnail_id( get_the_ID() ), 'thumbnail'); ?>
 <?php if ($fb_image) : ?>
@@ -103,7 +103,6 @@
 <!-- BEGIN MIDDLE -->
 <div id="middle">
 <nav class="select">
-
 <?php 
 
 	$pageslabel = array('show_option_none' => 'Pages:'); 
@@ -127,32 +126,6 @@
     }
     
     pageDropdown.onchange = onPageChange;
-    
-</script>
-
-<?php 
-
-$categorieslabel = array('show_option_none' => 'Categories:');
-
-wp_dropdown_categories($categorieslabel); // creates the dropdown list of categories in WordPress with a label of 'Categories:' 
-
-?> 
-
-<script type="text/javascript">
-
-    var catDropdown = document.getElementById("cat");
-    
-    function onCatChange() { // creates the link to the category's id
-    
-        if ( catDropdown.options[catDropdown.selectedIndex].value > 0 ) {
-            
-            location.href = "<?php echo get_option('home'); ?>/?cat="+catDropdown.options[catDropdown.selectedIndex].value;
-            
-        }
-        
-    }
-    
-    catDropdown.onchange = onCatChange;
     
 </script>
  

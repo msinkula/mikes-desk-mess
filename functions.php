@@ -11,18 +11,23 @@ Author URI: http://www.premiumdw.com/
 add_editor_style( 'admin.css' );
 
 // Register Sidebars
-if ( function_exists('register_sidebar') )
-	register_sidebars(array(
+register_sidebars(array(
 	'name' => 'sidebar',
 	'description' => 'Widgets in this area will be shown in the side bar.',
 	'before_widget' => '<div class="widget">',
 	'after_widget' => '</div>',
 	'before_title' => '<h2>',
 	'after_title' => '</h2>',
-	));
+));
+//
 	
 // Enable Featured Image
-add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails' );
+//
+
+// Create Page Excerpts
+add_post_type_support( 'page', 'excerpt' );
+// 
 
 // Show Gravitars	
 function show_avatar($comment, $size) {				
@@ -44,11 +49,32 @@ function show_avatar($comment, $size) {
 function add_poop() {
 	return '<p>Poop.</p>';
 }
+//
+
+// Get My Meta Description 
+function get_my_meta_description() {
+	
+	global $post;
+	
+	if ( is_single() ) { // for postings...
+	
+		echo strip_tags(get_the_excerpt()); // get the excerpt from the excerpt filed or the first 150 words of the page or posting
+		
+	} else { // for everything else...
+		
+		echo strip_tags(get_the_author_meta('description', 2)); // retrieve my author description
+		
+	}
+	
+}
+//
 
 // Get My Flexslider
 function add_flexslider() { 
 	
-	$attachments = get_children(array('post_parent' => get_the_ID(), 'order' => 'ASC', 'orderby' => 'menu_order', 'post_type' => 'attachment', 'post_mime_type' => 'image','caption' => $attachment->post_excerpt, ));
+	global $post; // don't forget to make this a global variable inside your function
+    
+    $attachments = get_children(array('post_parent' => $post->ID, 'order' => 'ASC', 'orderby' => 'menu_order', 'post_type' => 'attachment', 'post_mime_type' => 'image', ));	
 	
 	if ($attachments) { // see if there are images attached to posting
         
@@ -56,7 +82,7 @@ function add_flexslider() {
 		echo '<ul class="slides">';
     
 		foreach ( $attachments as $attachment_id => $attachment ) { // create the list items for images with captions
-		
+				
 			echo '<li>';
 			echo wp_get_attachment_image($attachment_id, 'large');
 			echo '<p>';
@@ -103,4 +129,3 @@ bloginfo('name'); // retrieve the site name
 //
 	
 ?>
-
