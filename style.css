@@ -446,7 +446,7 @@ audio {
 		border: 1px solid #635537;
 		padding: 1.5%;
 		overflow: hidden;
-		width: 95%;
+		/* width: 95%; */
 		}
 		
 	#content img {
@@ -774,6 +774,15 @@ audio {
 			background: -moz-linear-gradient(top, #F3EEE4, #B3AEA4); /* FIREFOX */
 			border: 1px solid #B3AEA4;
 			}
+
+            #content div.wpcf7-recaptcha {
+                margin-bottom: 20px;
+            }
+
+            #content div.wpcf7-recaptcha div {
+                height: auto !important;
+                width: auto !important;
+            }
 		
 	#contact-map {
 		overflow: hidden;
