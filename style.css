@@ -188,6 +188,15 @@ audio {
 		padding: 0 5px;
 		width: 12%;
 		}
+		
+	#amazon-wishlist-button {
+		text-align: center;
+		}
+		
+	#amazon-wishlist-button img {
+		padding: 5px 0;
+		max-width: 80%;
+		}
 
 	#sidebar li.widget, #sidebar div.tubepress_sidebar {
 		text-align: center;
@@ -752,6 +761,8 @@ audio {
 		border-radius: 10px; /* 10px /300px */
 		border: 1px solid #CAC5B9;
 		}
+
+        /* ----- Contact Form 7 ----- */
 		
 		#content input#submit, #content input.wpcf7-submit {
 			cursor:pointer;
@@ -775,14 +786,14 @@ audio {
 			border: 1px solid #B3AEA4;
 			}
 
-            #content div.wpcf7-recaptcha {
-                margin-bottom: 20px;
-            }
+        #content div.wpcf7-recaptcha {
+            margin-bottom: 20px;
+        }
 
-            #content div.wpcf7-recaptcha div {
-                height: auto !important;
-                width: auto !important;
-            }
+        #content div.wpcf7-recaptcha div {
+            height: auto !important;
+            width: auto !important;
+        }
 		
 	#contact-map {
 		overflow: hidden;
